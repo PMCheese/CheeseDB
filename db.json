@@ -1,0 +1,69 @@
+{
+   "heroes": [
+    
+        {
+          "Hero": "Alencia",
+          "CP": 14929,
+          "Class": "Warrior",
+          "Element": "Earth",
+          "Attack": 825,
+          "Health": 5769,
+          "Speed": 106,
+          "Defence": 599,
+          "Crit": 15,
+          "CritD": 150,
+          "Eff": 0,
+          "EffR": 0,
+          "DualAttack": 5,
+          "S1Name": "Eradicate",
+          "S1Desc": "Batters the enemy, with a 60% chance to decrease Defense for 1 turn. Damage dealt increases proportional to the caster's max Health.",
+          "S2Name": "Noble Blood",
+          "S2Desc": "25% chance to grant Mind's Eye to the caster for 1 turn when attacked. On the caster's turn, when using Eradicate while granted Mind's Eye, activates Trample. Trample: Strikes the enemy, decreasing the cooldown of Genesis by 1 turn. Damage dealt increases proportional to the caster's max Health.",
+          "S3Name": "Genesis",
+          "S3Desc": "Attacks all enemies with Dragon's might, dispelling all buffs. Damage dealt increases proportional to the caster's max Health."
+        },
+        {
+          "Hero": "Apocalypse Ravi",
+          "CP": 14929,
+          "Class": "Warrior",
+          "Element": "Dark",
+          "Attack": 825,
+          "Health": 5769,
+          "Speed": 106,
+          "Defence": 599,
+          "Crit": 15,
+          "CritD": 150,
+          "Eff": 0,
+          "EffR": 0,
+          "DualAttack": 5,
+          "S1Name": "Spectral Axe",
+          "S1Desc": "Attacks the enemy with an axe, inflicting injuries before absorbing some of the damage dealt as Health. Damage dealt increases proportional to the caster's max Health. The severity of injuries increases proportional to damage dealt. Injuries decrease max Health of the target by up to 10% every time this skill is used.",
+          "S2Name": "War God's Might",
+          "S2Desc": "Starts the first battle with 50 Fighting Spirit. At the moment the caster is attacked, consumes 10 Fighting Spirit to increase Combat Readiness of the caster by 15% and recovers the caster's Health. Amount recovered increases proportional to the caster's max Health.",
+          "S3Name": "Deliverance: Soul Exchange",
+          "S3Desc": "Delivers divine judgment down upon the enemy. When the enemy is defeated, revives one random dead ally with 15% Health and grants skill nullifier once. Damage dealt increases proportional to the caster's max Health. Damage dealt by this skill increases every time somebody dies. Effect can only stack up to 3 times."
+        },
+        {
+          "Hero": "Ran",
+          "CP": 16326,
+          "Class": "Thief",
+          "Element": "Ice",
+          "Attack": 1119,
+          "Health": 5380,
+          "Speed": 129,
+          "Defence": 483,
+          "Crit": 23,
+          "CritD": 150,
+          "Eff": 0,
+          "EffR": 0,
+          "DualAttack": 5,
+          "S1Name": "Tempest",
+          "S1Desc": "Attacks the enemy with a swordstorm. Penetrates the target's Defense by 20%. Damage dealt increases proportional to the caster's Speed.",
+          "S2Name": "Mental Focus",
+          "S2Desc": "Grants immunity to all allies for 2 turns before increasing Attack of the caster for 2 turns. Grants an extra turn to the caster.",
+          "S3Name": "Instant Blade",
+          "S3Desc": "Attacks all enemies with a sword, dispelling two buffs before an 80% chance to inflict stigma for 2 turns, and a 65% chance to decrease Defense for 2 turns. Damage dealt increases proportional to the caster and the target's Speed."
+        }
+      ]
+      
+}
