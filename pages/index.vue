@@ -7,7 +7,6 @@
 
 <script>
 import Heroes from '../components/Heroes'
-import Hero from '../components/Hero'
 export default {
 
   name: 'IndexPage',
@@ -25,12 +24,11 @@ export default {
 
   methods: {
     async fetchData() {
-      const res = await fetch('http://localhost:5000/heroes')
+      const res = await fetch('http://localhost:5000/api/heroes')
       const data = await res.json()
       console.log(data)
       return data
     },
-
   },
 
   async created() {
