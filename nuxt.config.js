@@ -36,7 +36,7 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '~/modules/mongodb-setup.js'
+    //'~/modules/mongodb-setup.js'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

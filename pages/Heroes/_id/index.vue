@@ -6,6 +6,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+const url = '/api/heroes'
 export default {
     data(){
         return {
@@ -13,7 +15,8 @@ export default {
         }
     },
     async created(){
-        const res = await fetch('http://localhost:' + (process.env.PORT || 5000) + '/api/heroes')
+        //const res = await fetch('api/heroes')
+        const res = await asios.get(url)
         const heroes = await res.json()
         console.log(heroes)
         heroes.forEach((Hero) => {
