@@ -22,9 +22,9 @@ export default {
        //     if(Hero.Hero == this.$route.params.id){
         //        this.hero = Hero
         //    } 
-        }
+        //}
 
-        )
+        //)
         
     }
 }
