@@ -26,7 +26,7 @@ export default {
 
   methods: {
     async fetchData() {
-      const res = await fetch('http://localhost:5000/api/heroes')
+      const res = await fetch('http://localhost:' + (process.env.PORT || 5000) + '/api/heroes')
       const data = await res.json()
       console.log(data)
       return data
