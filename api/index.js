@@ -20,5 +20,5 @@ app.use('/api/heroes', heroes);
 const port = Number(process.env.PORT)-1 || 5000;
 
 
-app.listen(port, () => console.log(`Server started on port ${port}`));
+app.listen(port, '0.0.0.0', () => console.log(`Server started on port ${port}`));
 
