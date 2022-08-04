@@ -28,10 +28,10 @@ export default {
   methods: {
     async fetchData() {
       console.log("get pages/index")
-      //const res = await fetch('0.0.0.0:5000/api/heroes')
-      const res = await axios.get("http://localhost:5000/api/heroes")
+      const res = await fetch('http://localhost:5000/api/heroes')
+      //const res = await axios.get("http://localhost:5000/api/heroes")
       const data = await res.json()
-
+      console.log(data)
       return data
     },
   },
