@@ -29,7 +29,7 @@ export default {
     async fetchData() {
       console.log("get pages/index")
       //const res = await fetch('0.0.0.0:5000/api/heroes')
-      const res = await axios.get("0.0.0.0:5000/api/heroes")
+      const res = await axios.get("/api/heroes")
       const data = await res.json()
 
       return data
