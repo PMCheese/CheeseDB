@@ -7,11 +7,13 @@
 
 <script>
 import Heroes from '../components/Heroes'
+import Hero from '../components/Hero'
 export default {
 
   name: 'IndexPage',
   components: {
     Heroes,
+    Hero,
   },
 
   data() {

@@ -1,3 +1,5 @@
+const path = require('path');
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -25,17 +27,23 @@ export default {
   plugins: [
   ],
 
+  serverMiddleware: [
+    {path: '/api', handler: '~/api/index.js'}
+  ],
+
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
+    '~/modules/mongodb-setup.js'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // Doc: https://www.primefaces.org/primevue/showcase-v2/#/setup
     'primevue/nuxt',
+    '~/modules/mongodb-setup.js'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
@@ -44,3 +52,4 @@ export default {
     transpile: ['primevue'],
   }
 }
+
