@@ -17,7 +17,7 @@ app.use('/api/heroes', heroes);
 ///   app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
 //}
 
-const port = process.env.PORT || 5000;
+const port = 4000;
 
 console.log('api start')
 
