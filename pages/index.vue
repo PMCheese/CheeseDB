@@ -27,7 +27,7 @@ export default {
   methods: {
     async fetchData() {
       console.log("get pages/index")
-      const res = await fetch('/api/heroes')
+      const res = await fetch('0.0.0.0:5000/api/heroes')
       const data = await res.json()
       return data
     },
