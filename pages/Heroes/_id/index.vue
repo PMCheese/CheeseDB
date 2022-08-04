@@ -13,6 +13,7 @@ export default {
         }
     },
     async created(){
+        console.log("get hero/id")
         const res = await fetch('http://localhost:' + (process.env.PORT || 5000) + '/api/heroes')
         const heroes = await res.json()
         console.log(heroes)
@@ -24,7 +25,7 @@ export default {
         }
 
         )
-        console.log(this.hero)
+        
     }
 }
 </script>

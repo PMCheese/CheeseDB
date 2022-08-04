@@ -26,9 +26,9 @@ export default {
 
   methods: {
     async fetchData() {
+      console.log("get pages/index")
       const res = await fetch('http://localhost:' + (process.env.PORT || 5000) + '/api/heroes')
       const data = await res.json()
-      console.log(data)
       return data
     },
   },
