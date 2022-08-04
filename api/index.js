@@ -17,9 +17,9 @@ app.use('/api/heroes', heroes);
 ///   app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
 //}
 
-//const port = Number(process.env.PORT) || 5000;
+const port = Number(process.env.PORT) || 5000;
 
 console.log('api start')
 
-//app.listen(port, '0.0.0.0', () => console.log(`Server started on port ${port}`));
+app.listen(port, '0.0.0.0', () => console.log(`Server started on port ${port}`));
 
