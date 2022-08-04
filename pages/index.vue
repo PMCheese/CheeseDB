@@ -8,12 +8,7 @@
 <script>
 import Heroes from '../components/Heroes'
 import Hero from '../components/Hero'
-import axios from 'axios'
-
-const url = '/api/heroes'
 export default {
-
- 
 
   name: 'IndexPage',
   components: {
@@ -31,8 +26,7 @@ export default {
 
   methods: {
     async fetchData() {
-      //const res = await fetch(url)
-      const res = await axios.get(url)
+      const res = await fetch('http://localhost:' + (process.env.PORT || 5000) + '/api/heroes')
       const data = await res.json()
       console.log(data)
       return data
