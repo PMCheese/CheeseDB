@@ -8,7 +8,6 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "test": "jest",
-    "json": "json-server --watch db.json --port 5000",
     "startserve": "node server/index.js",
     "dev": "nodemon api/index.js"
   },

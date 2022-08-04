@@ -43,7 +43,7 @@ export default {
   modules: [
     // Doc: https://www.primefaces.org/primevue/showcase-v2/#/setup
     'primevue/nuxt',
-    '~/modules/mongodb-setup.js'
+    //'~/modules/mongodb-setup.js'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
