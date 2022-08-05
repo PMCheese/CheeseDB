@@ -28,7 +28,12 @@ export default {
   methods: {
     async fetchData() {
       console.log("get pages/index")
-      const res = await fetch('http://localhost:5000/api/heroes')
+      try{
+        const res = await fetch('http://localhost:5000/api/heroes')
+      }catch(err){
+        console.log(err)
+      }
+      
       //const res = await axios.get("/api/heroes")
       //const res = this.$api.loadHeroesCollection
       const data = await res.json()
