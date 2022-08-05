@@ -1,7 +1,6 @@
 <template>
 <nuxt-link :to="'Heroes/' + id">
     <div class="heroclass">
-      <p>"test"</p>
       <p>{{ hero }}</p>
     </div>
 </nuxt-link>

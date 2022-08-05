@@ -1,7 +1,8 @@
 <template>
     <div>
         <h1>{{hero.Hero}}</h1>
-        <h2>{{hero.Health}}</h2>
+        <h2>CP: {{hero.CP}}</h2>
+        <h2>Health: {{hero.Health}}</h2>
     </div>    
 </template>
 
@@ -13,18 +14,15 @@ export default {
         }
     },
     async created(){
-        console.log("get hero/id")
-        const res = await fetch('http://localhost:5000/api/heroes')
-        const heroes = await res.json()
-        console.log(heroes)
-        heroes.forEach((Hero) => {
-            
-            if(Hero.Hero == this.$route.params.id){
-                this.hero = Hero
-            } 
-        }
 
-        )
+        try{
+            console.log("get hero/id")
+            console.log(this.$route.params.id)
+            const res = await this.$api.getOneData(this.$route.params.id)
+            this.hero = await res.json()
+        }catch(err){
+            console.log(err)
+        }
         
     }
 }

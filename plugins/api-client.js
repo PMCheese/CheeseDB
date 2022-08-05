@@ -12,5 +12,11 @@ const api = {
         console.log('api get data')
         return fetch('/api/heroes');
         //return axios.get("/api/heroes")
+    },
+
+    getOneData(id){
+        console.log('api get one data')
+        console.log('hero to fetch' + id)
+        return fetch('/api/heroes/'+id)
     }
 }

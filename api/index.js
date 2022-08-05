@@ -37,18 +37,43 @@ async function getDBdata(req, res, next){
 
 }
 
+async function getOneDBData(res, heroID){
+    const test = client.db('CheeseDB').collection('CheeseDB');
+
+    const query = {"Hero": heroID}
+
+    console.log(query)
+
+    const database = await test.findOne(query)
+
+    
+
+    res.setHeader('Content-type', 'application/json')
+    res.end(JSON.stringify(database))
+    //console.log(database)
+    return database
+}
+
 export default function (req, res, next){
 
-    console.log(req.url)
+    console.log("url: " + req.url)
 
     if(req.url === '/heroes'){
 
         const data = getDBdata(req, res, next)
-
-        console.log(data)
-        
-        
         return;
+    }
+
+    else{
+        console.log('test for id')
+        console.log('test')
+        const heroID = req.url.slice(8)
+        console.log(heroID)
+        const heroID2 = heroID.replace('%20', ' ')
+        console.log("ID: " + heroID2)
+
+        const data = getOneDBData(res, heroID2)
+        return
     }
 
     next()
