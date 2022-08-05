@@ -1,4 +1,4 @@
-import mongo from '../api/routes/api/heroes.js';
+import mongo from '../api/mongodb.js';
 
 export default function(){
     this.nuxt.hook('render:setupMiddleWare', async () => {

@@ -33,7 +33,7 @@ export default {
         //const res = await axios.get("/api/heroes")
         //const res = this.$api.loadHeroesCollection
         const data = await res.json()
-        //console.log(data)
+        console.log(data)
         return data
       }catch(err){
         console.log(err)

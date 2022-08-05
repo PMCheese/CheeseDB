@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
@@ -11,15 +11,46 @@ const heroes = require('./routes/api/heroes');
 
 app.use('/api/heroes', heroes);
 
-//if(process.env.NODE_ENV === 'production'){
-//   app.use(express.static(__dirname + '/public/'));
 
-///   app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
-//}
+//const port = 5000;
 
-const port = 5000;
+//console.log('api start')
 
-console.log('api start')
+//app.listen(port, () => console.log(`Server started on port ${port}`));
+*/
+//import mongo from './mongodb';
+import {MongoClient, mongoClient} from "mongodb"
 
-app.listen(port, () => console.log(`Server started on port ${port}`));
+const uri = "mongodb+srv://admin:admin123@cheesedb.oeafi.mongodb.net/?retryWrites=true&w=majority";
 
+const client = new MongoClient(uri)
+
+async function getDBdata(req, res, next){
+    const test = client.db('CheeseDB').collection('CheeseDB');
+
+    const database = await test.find().toArray()
+
+    res.setHeader('Content-type', 'application/json')
+    res.end(JSON.stringify(database))
+    //console.log(database)
+    return database
+
+}
+
+export default function (req, res, next){
+
+    console.log(req.url)
+
+    if(req.url === '/heroes'){
+
+        const data = getDBdata(req, res, next)
+
+        console.log(data)
+        
+        
+        return;
+    }
+
+    next()
+
+}
