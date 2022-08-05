@@ -5,6 +5,7 @@
         <h1>{{hero.Hero}}</h1>
         <h2>CP: {{hero.CP}}</h2>
         <h2>Class: {{hero.Class}}</h2>
+        <h2>Rarity: {{hero.Rarity}}*</h2>
         <h2>Element: {{hero.Element}}</h2>
         <h2>Attack: {{hero.Attack}}</h2>
         <h2>Defence: {{hero.Defence}}</h2>

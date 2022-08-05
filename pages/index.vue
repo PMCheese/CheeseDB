@@ -9,6 +9,7 @@
 import Heroes from '../components/Heroes'
 import Hero from '../components/Hero'
 import axios from 'axios'
+import grid from '../components/Grid.vue'
 export default {
 
   name: 'IndexPage',
@@ -42,10 +43,7 @@ export default {
       console.log("get pages/index")
       try{
         const res = await this.$api.getData()
-        //const res = await axios.get("/api/heroes")
-        //const res = this.$api.loadHeroesCollection
         const data = await res.json()
-        console.log(data)
         return data
       }catch(err){
         console.log(err)
