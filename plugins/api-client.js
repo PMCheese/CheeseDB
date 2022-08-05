@@ -9,7 +9,7 @@ import axios from 'axios'
 
 const api = {
     getData() {
-        return fetch('http:0.0.0.0:5000/api/heroes');
-        //return axios.get("/api/heroes")
+        //return fetch('http:0.0.0.0:5000/api/heroes');
+        return axios.get("/api/heroes")
     }
 }
