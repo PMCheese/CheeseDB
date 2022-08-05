@@ -9,7 +9,6 @@
 import Heroes from '../components/Heroes'
 import Hero from '../components/Hero'
 import axios from 'axios'
-import grid from '../components/Grid.vue'
 export default {
 
   name: 'IndexPage',
