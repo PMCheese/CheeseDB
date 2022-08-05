@@ -16,6 +16,9 @@ async function loadHeroesCollection(){
 
     const client = await mongodb.MongoClient.connect(uri, {useNewUrlParser:true});
 
+    console.log("connected to db")
+    //console.log(client.db('CheeseDB').collection('CheeseDB'))
+
     return client.db('CheeseDB').collection('CheeseDB');
 }
 

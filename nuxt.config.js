@@ -18,6 +18,11 @@ export default {
     ]
   },
 
+  target: 'server',
+  server: {
+    host: '0.0.0.0'
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
       'primeflex/primeflex.css'
@@ -28,8 +33,7 @@ export default {
   ],
 
   serverMiddleware: [
-    {path: '/api', handler: '~/api/index.js'}
-    {path: '/api', handler: '~/pages'}
+    {path: '/api', handler: '~/api/index.js'},
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
