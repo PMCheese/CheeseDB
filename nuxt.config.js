@@ -30,6 +30,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~/plugins/api-client.js',
   ],
 
   serverMiddleware: [
@@ -41,14 +42,14 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '~/modules/mongodb-setup.js'
+    //'~/modules/mongodb-setup.js'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // Doc: https://www.primefaces.org/primevue/showcase-v2/#/setup
     'primevue/nuxt',
-    '~/modules/mongodb-setup.js'
+    //'~/modules/mongodb-setup.js'
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
