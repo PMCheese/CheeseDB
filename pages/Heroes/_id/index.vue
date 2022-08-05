@@ -50,6 +50,12 @@ export default {
             console.log(err)
         }
         
+    },
+    head(){
+        return{
+            title: "CheeseDB || " + this.hero.Hero,
+
+        }
     }
 }
 </script>

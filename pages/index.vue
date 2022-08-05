@@ -22,7 +22,19 @@ export default {
       heroes: [],
     }
   },
+ head(){
+    return{
+        title: "CheeseDB",
+        meta: [{
+          hid:"description",
+          name: "description",
+          content: "Database for Epic Seven"
+        }
+          
+        ],
 
+    }
+  },
 
 
   methods: {
@@ -46,5 +58,6 @@ export default {
   async created() {
     this.heroes = await this.fetchData()
   },
+
 }
 </script>
