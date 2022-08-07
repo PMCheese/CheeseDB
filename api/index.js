@@ -29,11 +29,15 @@ async function getDBdata(req, res, next){
     const test = client.db('CheeseDB').collection('CheeseDB2');
 
     const database = await test.find().toArray()
+    const sortedDB = database.sort(function (a, b) {
+        return a.name.localeCompare(b.name);})
+
+    console.log(sortedDB)
 
     res.setHeader('Content-type', 'application/json')
-    res.end(JSON.stringify(database))
+    res.end(JSON.stringify(sortedDB))
     //console.log(database)
-    return database
+    return sortedDB
 
 }
 
