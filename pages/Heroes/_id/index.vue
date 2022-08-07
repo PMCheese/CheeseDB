@@ -13,8 +13,8 @@
         <h2>Speed: {{heroStats60.spd}}</h2>
         <h2>Critical Hit Chance: {{heroStats60.chc}}</h2>
         <h2>Critical Hit Damage: {{heroStats60.chd}}</h2>
-        <h2>Effectiveness: {{heroStats60.effr}}</h2>
-        <h2>Effect Resistance: {{heroStats60.eff}}</h2>
+        <h2>Effectiveness: {{heroStats60.eff}}</h2>
+        <h2>Effect Resistance: {{heroStats60.efr}}</h2>
         <h2>Dual Attack Chance: {{heroStats60.dac}}</h2>
 
         </div>
