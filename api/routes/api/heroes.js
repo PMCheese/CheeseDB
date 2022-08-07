@@ -19,7 +19,7 @@ async function loadHeroesCollection(){
     console.log("connected to db")
     //console.log(client.db('CheeseDB').collection('CheeseDB'))
 
-    return client.db('CheeseDB').collection('CheeseDB');
+    return client.db('CheeseDB').collection('CheeseDB2');
 }
 
 module.exports = router;

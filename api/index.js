@@ -26,7 +26,7 @@ const uri = "mongodb+srv://admin:admin123@cheesedb.oeafi.mongodb.net/?retryWrite
 const client = new MongoClient(uri)
 
 async function getDBdata(req, res, next){
-    const test = client.db('CheeseDB').collection('CheeseDB');
+    const test = client.db('CheeseDB').collection('CheeseDB2');
 
     const database = await test.find().toArray()
 
@@ -38,19 +38,17 @@ async function getDBdata(req, res, next){
 }
 
 async function getOneDBData(res, heroID){
-    const test = client.db('CheeseDB').collection('CheeseDB');
+    const test = client.db('CheeseDB').collection('CheeseDB2');
 
-    const query = {"Hero": heroID}
+    const query = {"_id": heroID}
 
     console.log(query)
 
     const database = await test.findOne(query)
 
-    
-
     res.setHeader('Content-type', 'application/json')
     res.end(JSON.stringify(database))
-    //console.log(database)
+    console.log(database)
     return database
 }
 
@@ -66,7 +64,6 @@ export default function (req, res, next){
 
     else{
         console.log('test for id')
-        console.log('test')
         const heroID = req.url.slice(8)
         console.log(heroID)
         const heroID2 = heroID.replace('%20', ' ')
