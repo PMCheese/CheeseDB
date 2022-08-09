@@ -23,13 +23,19 @@
         <h1>Skills</h1>
         <h2>Skill 1</h2>
         <h2>{{skills0.name}}</h2>
-        <h2>{{skills0.description}}</h2>
+        <h2>{{skill0descfixed}}</h2>
+        <h2>{{skill0en.string}}</h2>
+        <skillen v-for="skill in this.skill0en" :key="skill.name" :skillenhance="skill.string" />
         <h2>Skill 2</h2>
         <h2>{{skills1.name}}</h2>
-        <h2>{{skills1.description}}</h2>
+        <h2>{{skill1descfixed}}</h2>
+        <h2>{{skill1en.string}}</h2>
+        <skillen v-for="skill in this.skill1en" :key="skill.name" :skillenhance="skill.string" />
         <h2>Skill 3</h2>
         <h2>{{skills2.name}}</h2>
-        <h2>{{skills2.description}}</h2>
+        <h2>{{skill2descfixed}}</h2>
+        <h2>{{skill2en.string}}</h2>
+        <skillen v-for="skill in this.skill2en" :key="skill.name" :skillenhance="skill.string" />
         </div>  
        
     </div>  
@@ -37,7 +43,13 @@
 </template>
 
 <script>
+import skillen from "../../../components/skillen.vue"
 export default {
+
+    components: {
+        skillen,
+    },
+
 
     data(){
         return {
@@ -47,6 +59,12 @@ export default {
             skills0:{},
             skills1:{},
             skills2:{},
+            skill0en:[],
+            skill1en:[],
+            skill2en:[],
+            skill0descfixed: "",
+            skill1descfixed: "",
+            skill2descfixed: ""
         }
     },
     async created(){
@@ -60,12 +78,24 @@ export default {
 
             this.heroStats = await this.hero.calculatedStatus
             this.heroStats60 = await this.heroStats.lv60SixStarFullyAwakened
+
             this.skills0 = await this.hero.skills[0]
+            this.skill0en = await this.skills0.enhancements
+            this.skill0desc = await this.skills0.description
+            this.skill0descfixed = await this.skill0desc.replace("{{variable}}", this.skills0.values)
+
             this.skills1 = await this.hero.skills[1]
+            this.skill1en = await this.skills1.enhancements
+            this.skill1desc = await this.skills1.description
+            this.skill1descfixed = await this.skill1desc.replace("{{variable}}", this.skills1.values)
+
             this.skills2 = await this.hero.skills[2]
+            this.skill2en = await this.skills2.enhancements
+            this.skill2desc = await this.skills2.description
+            this.skill2descfixed = await this.skill2desc.replace("{{variable}}", this.skills2.values)
             //this.hero = await JSON.parse(res)
             //console.log('return json:')
-            //console.log(this.hero)
+            //console.log(this.skill0en)
         }catch(err){
             console.log(err)
         }
