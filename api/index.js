@@ -29,10 +29,11 @@ async function getDBdata(req, res, next){
     const test = client.db('CheeseDB').collection('CheeseDB2');
 
     const database = await test.find().toArray()
+    //console.log(database)
     const sortedDB = database.sort(function (a, b) {
-        return a.name.localeCompare(b.name);})
+        return a.results[0].name.localeCompare(b.results[0].name);})
 
-    console.log(sortedDB)
+    //console.log(sortedDB)
 
     res.setHeader('Content-type', 'application/json')
     res.end(JSON.stringify(sortedDB))
@@ -44,7 +45,7 @@ async function getDBdata(req, res, next){
 async function getOneDBData(res, heroID){
     const test = client.db('CheeseDB').collection('CheeseDB2');
 
-    const query = {"_id": heroID}
+    const query = {results:{$elemMatch: {"_id": heroID}}}
 
     console.log(query)
 
@@ -52,7 +53,7 @@ async function getOneDBData(res, heroID){
 
     res.setHeader('Content-type', 'application/json')
     res.end(JSON.stringify(database))
-    console.log(database)
+    //console.log(database)
     return database
 }
 

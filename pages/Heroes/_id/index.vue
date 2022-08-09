@@ -21,12 +21,15 @@
 
         <div class = "midskills">
         <h1>Skills</h1>
-        <h2>{{}}</h2>
-        <h3>{{hero.S1Desc}}</h3>
-        <h2>{{hero.S2Name}}</h2>
-        <h3>{{hero.S2Desc}}</h3>
-        <h2>{{hero.S3Name}}</h2>
-        <h3>{{hero.S3Desc}}</h3>
+        <h2>Skill 1</h2>
+        <h2>{{skills0.name}}</h2>
+        <h2>{{skills0.description}}</h2>
+        <h2>Skill 2</h2>
+        <h2>{{skills1.name}}</h2>
+        <h2>{{skills1.description}}</h2>
+        <h2>Skill 3</h2>
+        <h2>{{skills2.name}}</h2>
+        <h2>{{skills2.description}}</h2>
         </div>  
        
     </div>  
@@ -41,8 +44,9 @@ export default {
             hero:{},
             heroStats:{},
             heroStats60:{},
-            skills:[],
-            skill0:{},
+            skills0:{},
+            skills1:{},
+            skills2:{},
         }
     },
     async created(){
@@ -51,13 +55,14 @@ export default {
             console.log("get hero/id")
             console.log(this.$route.params.id)
             const res = await this.$api.getOneData(this.$route.params.id)
-            this.hero = await res.json()
+            this.heroDB = await res.json()
+            this.hero = await this.heroDB.results[0]
+
             this.heroStats = await this.hero.calculatedStatus
             this.heroStats60 = await this.heroStats.lv60SixStarFullyAwakened
-            this.skills = await this.hero.ex_equip
-            this.skill0 = await this.skills[0].skills[0]
-            this.skill1 = await this.skills[1].skills[1]
-            this.skill2 = await this.skills[2].skills[2]
+            this.skills0 = await this.hero.skills[0]
+            this.skills1 = await this.hero.skills[1]
+            this.skills2 = await this.hero.skills[2]
             //this.hero = await JSON.parse(res)
             //console.log('return json:')
             //console.log(this.hero)

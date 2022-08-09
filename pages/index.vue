@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>List of Heroes:</h1>
-    <Hero v-for="hero in this.heroes" :key="hero._id" :id="hero._id" :hero="hero.name" />
+    <Hero v-for="hero in this.heroes" :key="hero.results[0]._id" :id="hero.results[0]._id" :hero="hero.results[0].name" />
   </div>
 </template>
 
